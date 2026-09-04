@@ -10,6 +10,7 @@ const projects = [
     description:
       "I built this as a proper learning platform rather than just a course website. Students can browse and join courses, while the admin side handles users, roles, enrolments, certificates and payments behind the scenes.",
     stack: ["Next.js", "TypeScript", "Supabase", "ToyyibPay"],
+    imageStyle: "desktop",
     images: [
       "/images/projects/mpa/mpa-homepage.png",
       "/images/projects/mpa/mpa-courses.png",
@@ -25,6 +26,7 @@ const projects = [
     description:
       "This started from my love for giving personal letters. I wanted to turn that feeling into something digital, where people can create private letters with their own themes, photos, memories and little details that make the message feel personal.",
     stack: ["Next.js", "TypeScript", "Supabase", "Vercel"],
+    imageStyle: "desktop",
     images: [
       "/images/projects/just-for-you/just-for-you-home.png",
       "/images/projects/just-for-you/just-for-you-envelope.png",
@@ -38,9 +40,14 @@ const projects = [
     status: "Prototype",
     progress: 36,
     description:
-      "I designed RideBuddy around a simple thought: riders spend a lot of time on the road earning a living or just getting from place to place, and someone may be waiting for them to come home safely. The idea focuses on safety, ride tracking, maintenance and everyday support for riders.",
+      "RideBuddy started from a simple thought: riders spend hours on the road, sometimes earning their living while dealing with traffic, navigation and deliveries at the same time. I wanted to explore a companion that looks after both the rider and the motorcycle, because getting home safely matters more than any trip.",
     stack: ["Flutter", "FlutterFlow", "Supabase", "Mobile UX"],
-    images: [],
+    imageStyle: "mobile",
+    images: [
+      "/images/projects/ridebuddy/ridebuddy-personalize.png",
+      "/images/projects/ridebuddy/ridebuddy-garage.png",
+      "/images/projects/ridebuddy/ridebuddy-companion.png",
+    ],
   },
   {
     number: "04",
@@ -51,6 +58,7 @@ const projects = [
     description:
       "A psychological mystery game I am building in Godot. Instead of relying only on jumpscares, I want the tension to come from investigation, strange recordings, difficult choices and the feeling that something in the story is not quite right.",
     stack: ["Godot", "GDScript", "3D", "Game Systems"],
+    imageStyle: "desktop",
     images: [],
   },
 ];
@@ -89,7 +97,6 @@ export default function Home() {
 
       {/* HERO */}
       <section className="mx-auto grid min-h-[82vh] max-w-7xl items-center gap-14 px-6 py-10 md:px-10 lg:grid-cols-[1.15fr_0.85fr]">
-        {/* LEFT */}
         <div>
           <p className="mb-6 text-sm uppercase tracking-[0.24em] text-neutral-500">
             Mechatronics · IoT · Software · Product Development
@@ -133,7 +140,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* RIGHT */}
+        {/* PROFILE */}
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
           <div className="relative overflow-hidden rounded-[2rem] border border-neutral-800 bg-neutral-950">
             <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
@@ -183,7 +190,6 @@ export default function Home() {
         id="projects"
         className="mx-auto max-w-7xl border-t border-neutral-900 px-6 py-24 md:px-10"
       >
-        {/* PROJECT INTRO */}
         <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <p className="mb-3 text-sm uppercase tracking-[0.24em] text-neutral-500">
@@ -209,41 +215,69 @@ export default function Home() {
               key={project.title}
               className="group flex flex-col rounded-[2rem] border border-neutral-800 bg-neutral-950 p-6 transition duration-300 hover:border-neutral-600"
             >
-              {/* PROJECT SCREENSHOTS */}
-              {project.images.length > 0 && (
-                <div className="mb-8">
-                  {/* MAIN IMAGE */}
-                  <div className="overflow-hidden rounded-[1.5rem] border border-neutral-800 bg-neutral-900">
-                    <Image
-                      src={project.images[0]}
-                      alt={`${project.title} main preview`}
-                      width={1400}
-                      height={850}
-                      className="aspect-[16/9] w-full object-cover object-top transition duration-500 group-hover:scale-[1.01]"
-                    />
+              {/* MOBILE PROJECT SCREENSHOTS */}
+              {project.images.length > 0 && project.imageStyle === "mobile" && (
+                <div className="mb-8 overflow-hidden rounded-[1.5rem] border border-neutral-800 bg-[#0c1018] p-4 sm:p-6">
+                  <div className="grid grid-cols-3 items-start gap-3 sm:gap-5">
+                    {project.images.map((image, index) => (
+                      <div
+                        key={image}
+                        className={`overflow-hidden rounded-[1rem] border border-neutral-700 bg-neutral-900 shadow-2xl transition duration-500 group-hover:-translate-y-1 ${
+                          index === 1 ? "mt-8" : ""
+                        }`}
+                      >
+                        <Image
+                          src={image}
+                          alt={`${project.title} mobile screen ${index + 1}`}
+                          width={420}
+                          height={850}
+                          className="h-auto w-full object-contain"
+                        />
+                      </div>
+                    ))}
                   </div>
 
-                  {/* SECONDARY IMAGES */}
-                  {project.images.length > 1 && (
-                    <div className="mt-3 grid grid-cols-2 gap-3">
-                      {project.images.slice(1, 3).map((image, index) => (
-                        <div
-                          key={image}
-                          className="overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900"
-                        >
-                          <Image
-                            src={image}
-                            alt={`${project.title} preview ${index + 2}`}
-                            width={800}
-                            height={500}
-                            className="aspect-[16/10] w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                  <div className="mt-5 flex items-center justify-between text-[10px] uppercase tracking-[0.18em] text-neutral-600">
+                    <span>Mobile Product</span>
+                    <span>Selected Screens · 03</span>
+                  </div>
                 </div>
               )}
+
+              {/* DESKTOP PROJECT SCREENSHOTS */}
+              {project.images.length > 0 &&
+                project.imageStyle === "desktop" && (
+                  <div className="mb-8">
+                    <div className="overflow-hidden rounded-[1.5rem] border border-neutral-800 bg-neutral-900">
+                      <Image
+                        src={project.images[0]}
+                        alt={`${project.title} main preview`}
+                        width={1400}
+                        height={850}
+                        className="aspect-[16/9] w-full object-cover object-top transition duration-500 group-hover:scale-[1.01]"
+                      />
+                    </div>
+
+                    {project.images.length > 1 && (
+                      <div className="mt-3 grid grid-cols-2 gap-3">
+                        {project.images.slice(1, 3).map((image, index) => (
+                          <div
+                            key={image}
+                            className="overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900"
+                          >
+                            <Image
+                              src={image}
+                              alt={`${project.title} preview ${index + 2}`}
+                              width={800}
+                              height={500}
+                              className="aspect-[16/10] w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
 
               {/* PROJECT HEADER */}
               <div className="flex items-start justify-between gap-6">
@@ -262,13 +296,12 @@ export default function Home() {
                 </span>
               </div>
 
-              {/* DESCRIPTION + PROGRESS METER */}
+              {/* DESCRIPTION + PROGRESS */}
               <div className="mt-8 grid flex-1 gap-8 md:grid-cols-[1fr_auto] md:items-center">
                 <p className="leading-7 text-neutral-400">
                   {project.description}
                 </p>
 
-                {/* CIRCULAR PROGRESS */}
                 <div
                   className="relative flex h-28 w-28 shrink-0 items-center justify-center rounded-full"
                   style={{
@@ -306,7 +339,6 @@ export default function Home() {
               <div className="mt-8">
                 <div className="mb-2 flex items-center justify-between text-xs">
                   <span className="text-neutral-500">Project progress</span>
-
                   <span className="text-neutral-300">{project.progress}%</span>
                 </div>
 
@@ -318,7 +350,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* CARD FOOTER */}
+              {/* FOOTER */}
               <div className="mt-8 flex items-center justify-between border-t border-neutral-900 pt-5 text-sm">
                 <span className="text-neutral-600">Built by Intan · 2026</span>
 
@@ -352,7 +384,6 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* 0% METER */}
               <div className="flex flex-col items-center justify-center rounded-3xl border border-dashed border-neutral-800 px-6 py-8">
                 <span className="text-4xl font-semibold text-neutral-300">
                   0%
@@ -363,7 +394,6 @@ export default function Home() {
                 </span>
               </div>
 
-              {/* UPCOMING IDEAS */}
               <div>
                 <p className="mb-4 text-sm font-medium text-neutral-300">
                   What&apos;s coming
