@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { Mail, MessageCircle, ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
@@ -160,17 +161,9 @@ export default function Home() {
     function handleKeyDown(event: KeyboardEvent) {
       if (!lightbox) return;
 
-      if (event.key === "Escape") {
-        closeLightbox();
-      }
-
-      if (event.key === "ArrowLeft") {
-        previousImage();
-      }
-
-      if (event.key === "ArrowRight") {
-        nextImage();
-      }
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowLeft") previousImage();
+      if (event.key === "ArrowRight") nextImage();
     }
 
     window.addEventListener("keydown", handleKeyDown);
@@ -193,19 +186,15 @@ export default function Home() {
             <a href="#about" className="transition hover:text-white">
               About
             </a>
-
             <a href="#projects" className="transition hover:text-white">
               Projects
             </a>
-
             <a href="#now" className="transition hover:text-white">
               /Now
             </a>
-
             <a href="#freelance" className="transition hover:text-white">
               Freelance
             </a>
-
             <a href="#contact" className="transition hover:text-white">
               Contact
             </a>
@@ -275,7 +264,6 @@ export default function Home() {
                 <p className="text-xs uppercase tracking-[0.22em] text-neutral-400">
                   Mechatronics · Software
                 </p>
-
                 <p className="mt-2 text-xl font-medium text-white">
                   Intan Maisara
                 </p>
@@ -285,7 +273,6 @@ export default function Home() {
             <div className="mt-4 grid grid-cols-2 gap-3 text-xs text-neutral-500">
               <div className="rounded-2xl border border-neutral-800 px-4 py-3">
                 <span>Focus</span>
-
                 <div className="mt-1 text-sm text-neutral-200">
                   Product &amp; Engineering
                 </div>
@@ -293,7 +280,6 @@ export default function Home() {
 
               <div className="rounded-2xl border border-neutral-800 px-4 py-3">
                 <span>Status</span>
-
                 <div className="mt-1 text-sm text-neutral-200">
                   Building in public
                 </div>
@@ -307,7 +293,6 @@ export default function Home() {
           id="about"
           className="mx-auto max-w-7xl border-t border-neutral-900 px-6 py-24 md:px-10 md:py-32"
         >
-          {/* ABOUT INTRO */}
           <div className="grid gap-12 lg:grid-cols-[0.55fr_1.45fr] lg:gap-20">
             <div>
               <p className="text-sm uppercase tracking-[0.24em] text-neutral-500">
@@ -386,16 +371,11 @@ export default function Home() {
             </div>
           </div>
 
-          {/* HUMAN REASON */}
           <div className="mt-20 grid gap-4 md:grid-cols-2">
             <div className="rounded-[2rem] border border-neutral-800 bg-neutral-950 p-7 md:p-9">
-              <div className="flex items-center justify-between">
-                <p className="text-xs uppercase tracking-[0.22em] text-neutral-500">
-                  01 · Useful
-                </p>
-
-                <span className="text-lg text-neutral-700">↘</span>
-              </div>
+              <p className="text-xs uppercase tracking-[0.22em] text-neutral-500">
+                01 · Useful
+              </p>
 
               <h3 className="mt-8 text-2xl font-semibold tracking-[-0.03em]">
                 Think beyond the feature.
@@ -412,20 +392,12 @@ export default function Home() {
                 They might spend hours on the road, and at the end of the day,
                 there may be someone at home waiting for them to return safely.
               </p>
-
-              <div className="mt-8 border-t border-neutral-900 pt-5 text-xs uppercase tracking-[0.18em] text-neutral-600">
-                RideBuddy · The person behind the journey
-              </div>
             </div>
 
             <div className="rounded-[2rem] border border-neutral-800 bg-neutral-950 p-7 md:p-9">
-              <div className="flex items-center justify-between">
-                <p className="text-xs uppercase tracking-[0.22em] text-neutral-500">
-                  02 · Sentimental
-                </p>
-
-                <span className="text-lg text-neutral-700">↘</span>
-              </div>
+              <p className="text-xs uppercase tracking-[0.22em] text-neutral-500">
+                02 · Sentimental
+              </p>
 
               <h3 className="mt-8 text-2xl font-semibold tracking-[-0.03em]">
                 Make it feel like someone cared.
@@ -442,15 +414,10 @@ export default function Home() {
                 actually taken their time to make something specifically for
                 you.
               </p>
-
-              <div className="mt-8 border-t border-neutral-900 pt-5 text-xs uppercase tracking-[0.18em] text-neutral-600">
-                Just For You · The feeling behind the product
-              </div>
             </div>
           </div>
 
-          {/* ABOUT CONCLUSION */}
-          <div className="mt-20 grid gap-10 border-y border-neutral-900 py-14 lg:grid-cols-[0.65fr_1.35fr] lg:items-start">
+          <div className="mt-20 grid gap-10 border-y border-neutral-900 py-14 lg:grid-cols-[0.65fr_1.35fr]">
             <p className="text-sm uppercase tracking-[0.24em] text-neutral-600">
               Where that leaves me
             </p>
@@ -472,71 +439,6 @@ export default function Home() {
               </p>
             </div>
           </div>
-
-          {/* ABOUT CARDS */}
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            <div className="group rounded-[1.75rem] border border-neutral-800 bg-neutral-950 p-6 transition hover:border-neutral-600">
-              <div className="flex items-center justify-between">
-                <span className="text-xs uppercase tracking-[0.22em] text-neutral-600">
-                  01
-                </span>
-
-                <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              </div>
-
-              <p className="mt-10 text-sm text-neutral-500">Where I started</p>
-
-              <h3 className="mt-2 text-xl font-semibold">
-                Mechatronics Engineering
-              </h3>
-
-              <p className="mt-4 text-sm leading-6 text-neutral-500">
-                Automation · Electronics · Programming
-              </p>
-            </div>
-
-            <div className="group rounded-[1.75rem] border border-neutral-800 bg-neutral-950 p-6 transition hover:border-neutral-600">
-              <div className="flex items-center justify-between">
-                <span className="text-xs uppercase tracking-[0.22em] text-neutral-600">
-                  02
-                </span>
-
-                <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              </div>
-
-              <p className="mt-10 text-sm text-neutral-500">
-                Where I&apos;m exploring
-              </p>
-
-              <h3 className="mt-2 text-xl font-semibold">
-                Software &amp; Product Development
-              </h3>
-
-              <p className="mt-4 text-sm leading-6 text-neutral-500">
-                Web · Mobile · IoT · Interactive Experiences
-              </p>
-            </div>
-
-            <div className="group rounded-[1.75rem] border border-neutral-800 bg-neutral-950 p-6 transition hover:border-neutral-600">
-              <div className="flex items-center justify-between">
-                <span className="text-xs uppercase tracking-[0.22em] text-neutral-600">
-                  03
-                </span>
-
-                <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              </div>
-
-              <p className="mt-10 text-sm text-neutral-500">How I work</p>
-
-              <h3 className="mt-2 text-xl font-semibold">
-                Build → Break → Learn → Build Again
-              </h3>
-
-              <p className="mt-4 text-sm leading-6 text-neutral-500">
-                I learn best when I have something real to make.
-              </p>
-            </div>
-          </div>
         </section>
 
         {/* PROJECTS */}
@@ -544,22 +446,14 @@ export default function Home() {
           id="projects"
           className="mx-auto max-w-7xl border-t border-neutral-900 px-6 py-24 md:px-10"
         >
-          <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <div>
-              <p className="mb-3 text-sm uppercase tracking-[0.24em] text-neutral-500">
-                Selected Work
-              </p>
-
-              <h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-6xl">
-                Things I&apos;ve been building.
-              </h2>
-            </div>
-
-            <p className="max-w-md text-sm leading-6 text-neutral-500">
-              These are some of the ideas I&apos;ve turned into real projects.
-              Some started because I needed them, some because I was curious,
-              and some simply because I wanted to see if I could build them.
+          <div className="mb-14">
+            <p className="mb-3 text-sm uppercase tracking-[0.24em] text-neutral-500">
+              Selected Work
             </p>
+
+            <h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-6xl">
+              Things I&apos;ve been building.
+            </h2>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-2">
@@ -568,114 +462,53 @@ export default function Home() {
                 key={project.title}
                 className="group flex flex-col rounded-[2rem] border border-neutral-800 bg-neutral-950 p-6 transition duration-300 hover:border-neutral-600"
               >
-                {/* MOBILE SHOWCASE */}
-                {project.images.length > 0 &&
-                  project.imageStyle === "mobile" && (
-                    <div className="mb-8 overflow-hidden rounded-[1.5rem] border border-neutral-800 bg-[#0c1018] p-4 sm:p-6">
-                      <div className="grid grid-cols-3 items-start gap-3 sm:gap-5">
-                        {project.images.map((image, index) => (
-                          <button
-                            key={image.src}
-                            type="button"
-                            onClick={() =>
-                              openLightbox(project.title, project.images, index)
-                            }
-                            className={`cursor-zoom-in overflow-hidden rounded-[1rem] border border-neutral-700 bg-neutral-900 text-left shadow-2xl transition duration-500 hover:border-neutral-500 group-hover:-translate-y-1 ${
-                              index === 1 ? "mt-8" : ""
-                            }`}
-                          >
-                            <Image
-                              src={image.src}
-                              alt={`${project.title} ${image.label}`}
-                              width={420}
-                              height={850}
-                              className="h-auto w-full object-contain"
-                            />
-                          </button>
-                        ))}
-                      </div>
-
-                      <div className="mt-5 flex items-center justify-between text-[10px] uppercase tracking-[0.18em] text-neutral-600">
-                        <span>Mobile Product</span>
-                        <span>Click to inspect</span>
-                      </div>
+                {project.imageStyle === "mobile" && (
+                  <div className="mb-8 overflow-hidden rounded-[1.5rem] border border-neutral-800 bg-[#0c1018] p-4 sm:p-6">
+                    <div className="grid grid-cols-3 items-start gap-3 sm:gap-5">
+                      {project.images.map((image, index) => (
+                        <button
+                          key={image.src}
+                          type="button"
+                          onClick={() =>
+                            openLightbox(project.title, project.images, index)
+                          }
+                          className={`cursor-zoom-in overflow-hidden rounded-[1rem] border border-neutral-700 ${
+                            index === 1 ? "mt-8" : ""
+                          }`}
+                        >
+                          <Image
+                            src={image.src}
+                            alt={`${project.title} ${image.label}`}
+                            width={420}
+                            height={850}
+                            className="h-auto w-full object-contain"
+                          />
+                        </button>
+                      ))}
                     </div>
-                  )}
+                  </div>
+                )}
 
-                {/* DESKTOP SHOWCASE */}
-                {project.images.length > 0 &&
-                  project.imageStyle === "desktop" && (
-                    <div className="mb-8">
-                      <button
-                        type="button"
-                        onClick={() =>
-                          openLightbox(project.title, project.images, 0)
-                        }
-                        className="block w-full cursor-zoom-in overflow-hidden rounded-[1.5rem] border border-neutral-800 bg-neutral-900 text-left transition hover:border-neutral-600"
-                      >
-                        <Image
-                          src={project.images[0].src}
-                          alt={`${project.title} ${project.images[0].label}`}
-                          width={1400}
-                          height={850}
-                          className="aspect-[16/9] w-full object-cover object-top transition duration-500 group-hover:scale-[1.01]"
-                        />
-                      </button>
-
-                      {project.images.length > 1 && (
-                        <div className="mt-3 grid grid-cols-2 gap-3">
-                          {project.images.slice(1, 3).map((image, index) => (
-                            <button
-                              key={image.src}
-                              type="button"
-                              onClick={() =>
-                                openLightbox(
-                                  project.title,
-                                  project.images,
-                                  index + 1,
-                                )
-                              }
-                              className="cursor-zoom-in overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900 text-left transition hover:border-neutral-600"
-                            >
-                              <Image
-                                src={image.src}
-                                alt={`${project.title} ${image.label}`}
-                                width={800}
-                                height={500}
-                                className="aspect-[16/10] w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]"
-                              />
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
-
-                {/* GAME SHOWCASE */}
-                {project.images.length > 0 && project.imageStyle === "game" && (
-                  <div className="mb-8 overflow-hidden rounded-[1.5rem] border border-neutral-800 bg-[#080a0d] p-3">
+                {project.imageStyle === "desktop" && (
+                  <div className="mb-8">
                     <button
                       type="button"
                       onClick={() =>
                         openLightbox(project.title, project.images, 0)
                       }
-                      className="relative block w-full cursor-zoom-in overflow-hidden rounded-[1.1rem] border border-neutral-800 text-left transition hover:border-neutral-600"
+                      className="block w-full overflow-hidden rounded-[1.5rem] border border-neutral-800"
                     >
                       <Image
                         src={project.images[0].src}
-                        alt={`${project.title} ${project.images[0].label}`}
+                        alt={project.title}
                         width={1400}
                         height={850}
-                        className="aspect-[16/9] w-full object-cover object-top transition duration-500 group-hover:scale-[1.01]"
+                        className="aspect-[16/9] w-full object-cover object-top"
                       />
-
-                      <div className="pointer-events-none absolute left-3 top-3 rounded-full border border-white/10 bg-black/70 px-3 py-1 text-[9px] uppercase tracking-[0.18em] text-neutral-300 backdrop-blur-sm">
-                        Prototype Build · Godot
-                      </div>
                     </button>
 
                     <div className="mt-3 grid grid-cols-2 gap-3">
-                      {project.images.slice(1, 3).map((image, index) => (
+                      {project.images.slice(1).map((image, index) => (
                         <button
                           key={image.src}
                           type="button"
@@ -686,71 +519,86 @@ export default function Home() {
                               index + 1,
                             )
                           }
-                          className="cursor-zoom-in overflow-hidden rounded-xl border border-neutral-800 text-left transition hover:border-neutral-600"
+                          className="overflow-hidden rounded-2xl border border-neutral-800"
                         >
                           <Image
                             src={image.src}
-                            alt={`${project.title} ${image.label}`}
+                            alt={image.label}
                             width={800}
                             height={500}
-                            className="aspect-[16/10] w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]"
+                            className="aspect-[16/10] w-full object-cover object-top"
                           />
                         </button>
                       ))}
                     </div>
+                  </div>
+                )}
 
-                    <div className="mt-4 flex items-center justify-between px-1 text-[10px] uppercase tracking-[0.18em] text-neutral-600">
-                      <span>Development Footage</span>
-                      <span>Click to inspect</span>
+                {project.imageStyle === "game" && (
+                  <div className="mb-8 overflow-hidden rounded-[1.5rem] border border-neutral-800 bg-[#080a0d] p-3">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        openLightbox(project.title, project.images, 0)
+                      }
+                      className="relative block w-full overflow-hidden rounded-[1.1rem]"
+                    >
+                      <Image
+                        src={project.images[0].src}
+                        alt={project.title}
+                        width={1400}
+                        height={850}
+                        className="aspect-[16/9] w-full object-cover object-top"
+                      />
+
+                      <div className="absolute left-3 top-3 rounded-full bg-black/70 px-3 py-1 text-[9px] uppercase tracking-[0.18em]">
+                        Prototype Build · Godot
+                      </div>
+                    </button>
+
+                    <div className="mt-3 grid grid-cols-2 gap-3">
+                      {project.images.slice(1).map((image, index) => (
+                        <button
+                          key={image.src}
+                          type="button"
+                          onClick={() =>
+                            openLightbox(
+                              project.title,
+                              project.images,
+                              index + 1,
+                            )
+                          }
+                          className="overflow-hidden rounded-xl border border-neutral-800"
+                        >
+                          <Image
+                            src={image.src}
+                            alt={image.label}
+                            width={800}
+                            height={500}
+                            className="aspect-[16/10] w-full object-cover object-top"
+                          />
+                        </button>
+                      ))}
                     </div>
                   </div>
                 )}
 
-                {/* PROJECT HEADER */}
-                <div className="flex items-start justify-between gap-6">
-                  <div>
-                    <p className="mb-3 text-xs uppercase tracking-[0.22em] text-neutral-500">
-                      {project.number} · {project.category}
-                    </p>
+                <p className="text-xs uppercase tracking-[0.22em] text-neutral-500">
+                  {project.number} · {project.category}
+                </p>
 
-                    <h3 className="text-3xl font-semibold tracking-[-0.03em]">
-                      {project.title}
-                    </h3>
-                  </div>
+                <div className="mt-3 flex items-start justify-between gap-4">
+                  <h3 className="text-3xl font-semibold">{project.title}</h3>
 
-                  <span className="shrink-0 rounded-full border border-neutral-800 px-3 py-1 text-xs text-neutral-400">
+                  <span className="rounded-full border border-neutral-800 px-3 py-1 text-xs text-neutral-400">
                     {project.status}
                   </span>
                 </div>
 
-                {/* DESCRIPTION + METER */}
-                <div className="mt-8 grid flex-1 gap-8 md:grid-cols-[1fr_auto] md:items-center">
-                  <p className="leading-7 text-neutral-400">
-                    {project.description}
-                  </p>
+                <p className="mt-8 flex-1 leading-7 text-neutral-400">
+                  {project.description}
+                </p>
 
-                  <div
-                    className="relative flex h-28 w-28 shrink-0 items-center justify-center rounded-full"
-                    style={{
-                      background: `conic-gradient(
-                        rgb(52 211 153) ${project.progress * 3.6}deg,
-                        rgb(38 38 38) ${project.progress * 3.6}deg
-                      )`,
-                    }}
-                  >
-                    <div className="flex h-[88px] w-[88px] flex-col items-center justify-center rounded-full bg-neutral-950">
-                      <span className="text-2xl font-semibold">
-                        {project.progress}%
-                      </span>
-
-                      <span className="mt-1 text-[10px] uppercase tracking-wider text-neutral-500">
-                        Complete
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* STACK */}
                 <div className="mt-8 flex flex-wrap gap-2">
                   {project.stack.map((item) => (
                     <span
@@ -762,383 +610,502 @@ export default function Home() {
                   ))}
                 </div>
 
-                {/* PROGRESS BAR */}
                 <div className="mt-8">
-                  <div className="mb-2 flex items-center justify-between text-xs">
+                  <div className="mb-2 flex justify-between text-xs">
                     <span className="text-neutral-500">Project progress</span>
-                    <span className="text-neutral-300">
-                      {project.progress}%
-                    </span>
+                    <span>{project.progress}%</span>
                   </div>
 
                   <div className="h-1.5 overflow-hidden rounded-full bg-neutral-900">
                     <div
-                      className="h-full rounded-full bg-emerald-400 transition-all duration-700"
+                      className="h-full rounded-full bg-emerald-400"
                       style={{ width: `${project.progress}%` }}
                     />
                   </div>
                 </div>
-
-                {/* FOOTER */}
-                <div className="mt-8 flex items-center justify-between border-t border-neutral-900 pt-5 text-sm">
-                  <span className="text-neutral-600">
-                    Built by Intan · 2026
-                  </span>
-
-                  <a
-                    href="#now"
-                    className="text-neutral-300 transition group-hover:text-white"
-                  >
-                    View progress ↗
-                  </a>
-                </div>
               </article>
             ))}
-
-            {/* IOT / MECHATRONICS */}
-            <article className="rounded-[2rem] border border-dashed border-neutral-800 bg-neutral-950/40 p-6 lg:col-span-2">
-              <div className="grid gap-10 lg:grid-cols-[1.2fr_0.45fr_0.8fr] lg:items-center">
-                <div>
-                  <p className="mb-3 text-xs uppercase tracking-[0.22em] text-neutral-600">
-                    05 · Coming Soon
-                  </p>
-
-                  <h3 className="text-3xl font-semibold tracking-[-0.03em]">
-                    IoT / Mechatronics Lab
-                  </h3>
-
-                  <p className="mt-4 max-w-xl leading-7 text-neutral-500">
-                    This will be the more hands-on side of my portfolio. I want
-                    this space to hold the things I build with sensors,
-                    microcontrollers, automation and whatever engineering idea
-                    makes me curious enough to start experimenting.
-                  </p>
-                </div>
-
-                <div className="flex flex-col items-center justify-center rounded-3xl border border-dashed border-neutral-800 px-6 py-8">
-                  <span className="text-4xl font-semibold text-neutral-300">
-                    0%
-                  </span>
-
-                  <span className="mt-2 text-xs text-neutral-600">
-                    Not started yet
-                  </span>
-                </div>
-
-                <div>
-                  <p className="mb-4 text-sm font-medium text-neutral-300">
-                    What&apos;s coming
-                  </p>
-
-                  <div className="space-y-3 text-sm text-neutral-500">
-                    <div className="flex items-center gap-3">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                      Smart monitoring systems
-                    </div>
-
-                    <div className="flex items-center gap-3">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                      IoT &amp; automation experiments
-                    </div>
-
-                    <div className="flex items-center gap-3">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                      ESP32 &amp; Arduino projects
-                    </div>
-
-                    <div className="flex items-center gap-3">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                      More hands-on engineering builds
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
           </div>
         </section>
+
         {/* NOW */}
         <section
           id="now"
           className="mx-auto max-w-7xl border-t border-neutral-900 px-6 py-24 md:px-10 md:py-32"
         >
-          <div className="mb-14 flex flex-col justify-between gap-8 md:flex-row md:items-end">
-            <div>
-              <p className="mb-3 text-sm uppercase tracking-[0.24em] text-neutral-500">
-                /Now
-              </p>
+          <p className="text-sm uppercase tracking-[0.24em] text-neutral-500">
+            /Now
+          </p>
 
-              <h2 className="max-w-3xl text-4xl font-semibold tracking-[-0.04em] md:text-6xl">
-                What I&apos;m working on lately.
-              </h2>
+          <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] md:text-6xl">
+            What I&apos;m working on lately.
+          </h2>
+
+          <div className="mt-14 rounded-[2rem] border border-neutral-800 bg-neutral-950 p-8 md:p-10">
+            <div className="flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-emerald-400">
+              <span className="h-2 w-2 rounded-full bg-emerald-400" />
+              Active Now
             </div>
 
-            <div className="text-sm leading-6 text-neutral-500 md:text-right">
-              <p>September 2026</p>
-              <p>Miri, Sarawak</p>
-            </div>
+            <h3 className="mt-8 text-3xl font-semibold">MPA Learning Portal</h3>
+
+            <p className="mt-5 max-w-3xl leading-8 text-neutral-400">
+              Currently my main development priority. I&apos;m working on
+              turning it into a complete learning platform, from course delivery
+              and student enrolment to payments, certificates and the systems
+              behind them.
+            </p>
           </div>
 
-          {/* ACTIVE NOW */}
-          <div className="rounded-[2rem] border border-neutral-800 bg-neutral-950 p-7 md:p-10">
-            <div className="flex flex-col justify-between gap-8 md:flex-row md:items-start">
-              <div className="max-w-3xl">
-                <div className="flex items-center gap-3">
-                  <span className="h-2 w-2 rounded-full bg-emerald-400" />
-
-                  <p className="text-xs uppercase tracking-[0.22em] text-emerald-400">
-                    Active Now
-                  </p>
-                </div>
-
-                <p className="mt-8 text-xs uppercase tracking-[0.22em] text-neutral-600">
-                  01 · Building
-                </p>
-
-                <h3 className="mt-3 text-3xl font-semibold tracking-[-0.03em] md:text-4xl">
-                  MPA Learning Portal
-                </h3>
-
-                <p className="mt-6 max-w-2xl text-base leading-8 text-neutral-400 md:text-lg">
-                  Currently my main development priority. I&apos;m working on
-                  turning it into a complete learning platform, from course
-                  delivery and student enrolment to payments, certificates and
-                  the systems behind them.
-                </p>
-              </div>
-
-              <div className="shrink-0 rounded-3xl border border-neutral-800 bg-[#0c0c0c] px-6 py-5 md:min-w-[260px]">
-                <p className="text-xs uppercase tracking-[0.2em] text-neutral-600">
-                  Current focus
-                </p>
-
-                <div className="mt-5 space-y-3 text-sm text-neutral-300">
-                  <div className="flex items-center gap-3">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                    Payment flow
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                    Platform polish
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                    Course launch
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-10 border-t border-neutral-900 pt-5 text-xs uppercase tracking-[0.18em] text-neutral-600">
-              Main priority · Full-stack platform
-            </div>
-          </div>
-
-          {/* SECONDARY NOW CARDS */}
           <div className="mt-6 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-[2rem] border border-neutral-800 bg-neutral-950 p-7 md:p-9">
+            <div className="rounded-[2rem] border border-neutral-800 bg-neutral-950 p-8">
               <p className="text-xs uppercase tracking-[0.22em] text-neutral-600">
-                02 · Exploring
+                Exploring
               </p>
 
-              <h3 className="mt-4 text-2xl font-semibold tracking-[-0.03em]">
+              <h3 className="mt-4 text-2xl font-semibold">
                 Software × Mechatronics
               </h3>
 
               <p className="mt-5 leading-7 text-neutral-400">
-                I&apos;m continuing to grow on the software side while looking
-                for ways to bring it back into what I studied: automation, IoT
-                and physical systems.
+                Continuing to grow on the software side while finding ways to
+                connect it back to automation, IoT and physical systems.
               </p>
-
-              <div className="mt-8 rounded-2xl border border-neutral-900 bg-[#0c0c0c] p-5">
-                <p className="text-xs uppercase tracking-[0.2em] text-neutral-600">
-                  Next
-                </p>
-
-                <p className="mt-3 text-sm text-neutral-300">
-                  ESP32 · Sensors · IoT experiments
-                </p>
-              </div>
             </div>
 
-            <div className="rounded-[2rem] border border-neutral-800 bg-neutral-950 p-7 md:p-9">
+            <div className="rounded-[2rem] border border-neutral-800 bg-neutral-950 p-8">
               <p className="text-xs uppercase tracking-[0.22em] text-neutral-600">
-                03 · On The Side
+                On The Side
               </p>
 
-              <h3 className="mt-4 text-2xl font-semibold tracking-[-0.03em]">
+              <h3 className="mt-4 text-2xl font-semibold">
                 A few ideas I&apos;m not ready to abandon.
               </h3>
 
               <p className="mt-5 leading-7 text-neutral-400">
                 RideBuddy, Just For You and The Sixth Recording are still
-                sitting somewhere between prototype, experiment and &quot;I
-                really want to finish this.&quot;
+                somewhere between prototype, experiment and &quot;I really want
+                to finish this.&quot;
               </p>
-
-              <div className="mt-8 flex flex-wrap gap-2">
-                <span className="rounded-full border border-neutral-800 px-3 py-1 text-xs text-neutral-500">
-                  RideBuddy
-                </span>
-
-                <span className="rounded-full border border-neutral-800 px-3 py-1 text-xs text-neutral-500">
-                  Just For You
-                </span>
-
-                <span className="rounded-full border border-neutral-800 px-3 py-1 text-xs text-neutral-500">
-                  The Sixth Recording
-                </span>
-              </div>
             </div>
           </div>
+        </section>
 
-          {/* NOW ENDING */}
-          <div className="mt-16 border-y border-neutral-900 py-12">
-            <div className="grid gap-8 lg:grid-cols-[0.55fr_1.45fr] lg:items-start">
-              <p className="text-xs uppercase tracking-[0.22em] text-neutral-600">
-                A note to myself
+        {/* FREELANCE */}
+        <section
+          id="freelance"
+          className="mx-auto max-w-7xl border-t border-neutral-900 px-6 py-24 md:px-10 md:py-32"
+        >
+          <div className="grid gap-14 lg:grid-cols-[0.7fr_1.3fr]">
+            <div>
+              <p className="text-sm uppercase tracking-[0.24em] text-neutral-500">
+                Freelance
               </p>
 
-              <div>
-                <p className="max-w-3xl text-2xl font-medium leading-9 tracking-[-0.025em] text-white md:text-3xl md:leading-10">
-                  I usually have more ideas than time. For now, I&apos;m
-                  learning to build them one at a time.
-                </p>
+              <h2 className="mt-5 text-4xl font-semibold tracking-[-0.045em] md:text-6xl">
+                I&apos;m open to
+                <br />
+                selected projects.
+              </h2>
+            </div>
 
-                <p className="mt-6 text-sm text-neutral-600">
-                  Last updated · September 2026
-                </p>
+            <div>
+              <p className="max-w-3xl text-lg leading-8 text-neutral-400">
+                I&apos;m open to selected freelance projects that allow for a
+                reasonable timeline, as I balance them alongside my full-time
+                work.
+              </p>
+
+              <div className="mt-10 grid gap-4 sm:grid-cols-2">
+                {[
+                  ["01", "Web Development"],
+                  ["02", "Prototype Development"],
+                  ["03", "Internal Tools"],
+                  ["04", "IoT & Automation"],
+                ].map(([number, title]) => (
+                  <div
+                    key={title}
+                    className="rounded-[1.75rem] border border-neutral-800 bg-neutral-950 p-6"
+                  >
+                    <p className="text-xs text-neutral-600">{number}</p>
+                    <h3 className="mt-6 text-xl font-semibold">{title}</h3>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
+
+        {/* CONTACT */}
+        <section
+          id="contact"
+          className="mx-auto max-w-7xl border-t border-neutral-900 px-6 py-24 md:px-10 md:py-32"
+        >
+          {/* TOP */}
+          <div className="grid gap-14 lg:grid-cols-[0.42fr_1.58fr] lg:gap-16">
+            {/* PHOTOBOOTH */}
+            <div>
+              <p className="text-sm uppercase tracking-[0.24em] text-neutral-500">
+                Contact
+              </p>
+
+              <div className="mt-10 flex justify-center lg:justify-start">
+                <div className="-rotate-2 bg-[#f2f2f0] p-[7px] pb-5 shadow-[0_25px_80px_rgba(0,0,0,0.45)] transition duration-500 hover:rotate-0">
+                  <div className="space-y-[7px]">
+                    <div className="relative h-[150px] w-[125px] overflow-hidden bg-neutral-300 sm:h-[175px] sm:w-[145px]">
+                      <Image
+                        src="/images/photobooth/intan-1.jpg"
+                        alt="Intan photobooth photo 1"
+                        fill
+                        sizes="145px"
+                        className="object-cover"
+                      />
+                    </div>
+
+                    <div className="relative h-[150px] w-[125px] overflow-hidden bg-neutral-300 sm:h-[175px] sm:w-[145px]">
+                      <Image
+                        src="/images/photobooth/intan-2.jpg"
+                        alt="Intan photobooth photo 2"
+                        fill
+                        sizes="145px"
+                        className="object-cover"
+                      />
+                    </div>
+
+                    <div className="relative h-[150px] w-[125px] overflow-hidden bg-neutral-300 sm:h-[175px] sm:w-[145px]">
+                      <Image
+                        src="/images/photobooth/intan-3.jpg"
+                        alt="Intan photobooth photo 3"
+                        fill
+                        sizes="145px"
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="pt-4 text-center">
+                    <p className="text-[9px] font-medium uppercase tracking-[0.22em] text-neutral-500">
+                      INTAN · 2026
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* CONTACT CONTENT */}
+            <div>
+              <h2 className="max-w-4xl text-4xl font-semibold leading-[1.02] tracking-[-0.045em] sm:text-5xl md:text-6xl">
+                Have something in mind?
+                <br />
+                Tell me about it.
+              </h2>
+
+              <p className="mt-8 max-w-2xl text-base leading-8 text-neutral-400 md:text-lg">
+                Whether it&apos;s a project, collaboration, opportunity or just
+                a conversation about something interesting, you&apos;re welcome
+                to reach out.
+              </p>
+
+              {/* CONTACT BOX */}
+              <div className="mt-14 overflow-hidden rounded-[2rem] border border-neutral-800 bg-neutral-950">
+                <div className="grid lg:grid-cols-[1.3fr_0.7fr]">
+                  <div className="p-7 md:p-10">
+                    <p className="text-xs uppercase tracking-[0.22em] text-neutral-600">
+                      Start a conversation
+                    </p>
+
+                    <h3 className="mt-6 max-w-2xl text-3xl font-semibold leading-tight tracking-[-0.035em]">
+                      I&apos;d rather hear the idea while it&apos;s still messy
+                      than only when everything is figured out.
+                    </h3>
+
+                    <p className="mt-6 max-w-xl leading-7 text-neutral-500">
+                      Tell me what you&apos;re thinking about, what you&apos;re
+                      trying to build and roughly when you need it. We can
+                      figure out the rest from there.
+                    </p>
+
+                    <div className="mt-9 flex flex-wrap gap-3">
+                      <a
+                        href="mailto:intanmaisara0403@gmail.com"
+                        className="flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold transition hover:bg-neutral-200"
+                        style={{ color: "#000000" }}
+                      >
+                        <Mail size={16} />
+                        Send me an email
+                        <ArrowUpRight size={14} />
+                      </a>
+
+                      <a
+                        href="https://wa.me/60109626051"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-2 rounded-full border border-neutral-700 px-6 py-3 text-sm text-white transition hover:border-neutral-400"
+                      >
+                        <MessageCircle size={16} />
+                        WhatsApp
+                        <ArrowUpRight size={14} />
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="border-t border-neutral-800 bg-[#0c0c0c] p-7 md:p-10 lg:border-l lg:border-t-0">
+                    <p className="text-xs uppercase tracking-[0.22em] text-neutral-600">
+                      Currently
+                    </p>
+
+                    <div className="mt-7 flex items-center gap-3">
+                      <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                      <p className="font-medium">Open to selected work</p>
+                    </div>
+
+                    <div className="mt-8 space-y-6 border-t border-neutral-900 pt-8">
+                      <div>
+                        <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-600">
+                          Based in
+                        </p>
+                        <p className="mt-2 text-sm text-neutral-300">
+                          Miri, Sarawak · Malaysia
+                        </p>
+                      </div>
+
+                      <div>
+                        <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-600">
+                          Best for
+                        </p>
+                        <p className="mt-2 text-sm text-neutral-300">
+                          Freelance · Collaboration · Tech opportunities
+                        </p>
+                      </div>
+
+                      <div>
+                        <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-600">
+                          Response
+                        </p>
+                        <p className="mt-2 text-sm text-neutral-300">
+                          When I&apos;m away from work
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* SOCIALS */}
+              <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+                <a
+                  href="https://github.com/imysr"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex items-center justify-between rounded-[1.4rem] border border-neutral-800 p-5 transition hover:border-neutral-600 hover:bg-neutral-950"
+                >
+                  <div className="flex items-center gap-4">
+                    <svg
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                      className="h-[22px] w-[22px] fill-none stroke-neutral-300"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.28-.36 6.72-1.61 6.72-7.25A5.65 5.65 0 0 0 19.22 3.3 5.26 5.26 0 0 0 19.08.32S17.9-.06 15 1.82a13.38 13.38 0 0 0-7 0C5.1-.06 3.92.32 3.92.32a5.26 5.26 0 0 0-.14 2.98A5.65 5.65 0 0 0 2.28 7.25c0 5.63 3.44 6.89 6.72 7.25A4.8 4.8 0 0 0 8 18v4" />
+                      <path d="M8 19c-3 .92-3-1.5-4-2" />
+                    </svg>
+
+                    <div>
+                      <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-600">
+                        Code
+                      </p>
+                      <p className="mt-1 text-sm text-neutral-200">GitHub</p>
+                    </div>
+                  </div>
+
+                  <ArrowUpRight
+                    size={15}
+                    className="text-neutral-600 transition group-hover:text-white"
+                  />
+                </a>
+
+                <a
+                  href="https://www.instagram.com/ysrr.mka/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex items-center justify-between rounded-[1.4rem] border border-neutral-800 p-5 transition hover:border-neutral-600 hover:bg-neutral-950"
+                >
+                  <div className="flex items-center gap-4">
+                    <svg
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                      className="h-[22px] w-[22px] fill-none stroke-neutral-300"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect width="18" height="18" x="3" y="3" rx="5" ry="5" />
+                      <circle cx="12" cy="12" r="4" />
+                      <circle
+                        cx="17.5"
+                        cy="6.5"
+                        r="1"
+                        className="fill-neutral-300 stroke-none"
+                      />
+                    </svg>
+
+                    <div>
+                      <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-600">
+                        Social
+                      </p>
+                      <p className="mt-1 text-sm text-neutral-200">Instagram</p>
+                    </div>
+                  </div>
+
+                  <ArrowUpRight
+                    size={15}
+                    className="text-neutral-600 transition group-hover:text-white"
+                  />
+                </a>
+
+                <a
+                  href="https://www.tiktok.com/@ninimysr"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex items-center justify-between rounded-[1.4rem] border border-neutral-800 p-5 transition hover:border-neutral-600 hover:bg-neutral-950"
+                >
+                  <div className="flex items-center gap-4">
+                    <svg
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                      className="h-[22px] w-[22px] fill-none stroke-neutral-300"
+                      strokeWidth="1.7"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M14 3v11.5a4.5 4.5 0 1 1-4-4.47" />
+                      <path d="M14 3c.65 2.8 2.38 4.45 5 5" />
+                      <path d="M19 8v3c-1.9-.24-3.55-.98-5-2.2" />
+                    </svg>
+
+                    <div>
+                      <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-600">
+                        Social
+                      </p>
+                      <p className="mt-1 text-sm text-neutral-200">TikTok</p>
+                    </div>
+                  </div>
+
+                  <ArrowUpRight
+                    size={15}
+                    className="text-neutral-600 transition group-hover:text-white"
+                  />
+                </a>
+
+                <a
+                  href="mailto:intanmaisara0403@gmail.com"
+                  className="group flex items-center justify-between rounded-[1.4rem] border border-neutral-800 p-5 transition hover:border-neutral-600 hover:bg-neutral-950"
+                >
+                  <div className="flex items-center gap-4">
+                    <Mail
+                      size={22}
+                      strokeWidth={1.6}
+                      className="text-neutral-300"
+                    />
+
+                    <div>
+                      <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-600">
+                        Direct
+                      </p>
+                      <p className="mt-1 text-sm text-neutral-200">Email</p>
+                    </div>
+                  </div>
+
+                  <ArrowUpRight
+                    size={15}
+                    className="text-neutral-600 transition group-hover:text-white"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* FOOTER */}
+          <footer className="mt-24 border-t border-neutral-900 pt-8">
+            <div className="flex flex-col justify-between gap-6 text-sm text-neutral-600 md:flex-row md:items-center">
+              <p>© 2026 Intan Maisara.</p>
+
+              <p>Mechatronics · Software · Still building</p>
+
+              <a href="#" className="transition hover:text-neutral-300">
+                Back to top ↑
+              </a>
+            </div>
+          </footer>
+        </section>
       </main>
 
-      {/* IMAGE LIGHTBOX */}
+      {/* LIGHTBOX */}
       {lightbox && (
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 backdrop-blur-md md:p-8"
           onClick={closeLightbox}
         >
           <div
-            className="relative flex max-h-[95vh] w-full max-w-7xl flex-col rounded-[2rem] border border-neutral-800 bg-[#0c0c0c] p-4 shadow-2xl md:p-6"
+            className="relative flex max-h-[95vh] w-full max-w-7xl flex-col rounded-[2rem] border border-neutral-800 bg-[#0c0c0c] p-4 md:p-6"
             onClick={(event) => event.stopPropagation()}
           >
-            {/* LIGHTBOX HEADER */}
-            <div className="mb-4 flex items-start justify-between gap-6">
+            <div className="mb-4 flex justify-between">
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-neutral-500">
+                <p className="text-xs text-neutral-500">
                   {lightbox.index + 1} / {lightbox.images.length}
                 </p>
-
-                <h3 className="mt-1 text-xl font-semibold text-white">
+                <h3 className="mt-1 text-xl font-semibold">
                   {lightbox.projectTitle}
                 </h3>
-
-                <p className="mt-1 text-sm text-neutral-500">
-                  {lightbox.images[lightbox.index].label}
-                </p>
               </div>
 
               <button
                 type="button"
                 onClick={closeLightbox}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-700 text-xl text-neutral-400 transition hover:border-neutral-500 hover:text-white"
-                aria-label="Close image preview"
+                className="h-11 w-11 rounded-full border border-neutral-700"
               >
                 ×
               </button>
             </div>
 
-            {/* LARGE IMAGE */}
             <div className="relative flex min-h-0 flex-1 items-center justify-center overflow-hidden rounded-[1.5rem] border border-neutral-800 bg-black">
               <Image
                 src={lightbox.images[lightbox.index].src}
-                alt={`${lightbox.projectTitle} ${
-                  lightbox.images[lightbox.index].label
-                }`}
+                alt={lightbox.images[lightbox.index].label}
                 width={1800}
                 height={1200}
                 className="max-h-[68vh] w-auto max-w-full object-contain"
               />
 
-              {/* CENTER WATERMARK */}
               <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-                <div className="select-none text-center font-semibold uppercase tracking-[0.18em] text-white/20 drop-shadow-lg">
-                  <div className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl">
+                <div className="select-none text-center font-semibold uppercase tracking-[0.18em] text-white/20">
+                  <div className="text-2xl sm:text-4xl md:text-5xl">
                     Intan Maisara
                   </div>
-
-                  <div className="mt-2 text-sm tracking-[0.45em] sm:text-lg md:text-xl">
+                  <div className="mt-2 text-sm tracking-[0.45em]">
                     Portfolio
                   </div>
                 </div>
               </div>
 
-              {/* LEFT */}
-              {lightbox.images.length > 1 && (
-                <button
-                  type="button"
-                  onClick={previousImage}
-                  className="absolute left-3 flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-black/60 text-xl text-white backdrop-blur-md transition hover:bg-black/80 md:left-5"
-                  aria-label="Previous image"
-                >
-                  ←
-                </button>
-              )}
+              <button
+                type="button"
+                onClick={previousImage}
+                className="absolute left-4 h-11 w-11 rounded-full bg-black/60"
+              >
+                ←
+              </button>
 
-              {/* RIGHT */}
-              {lightbox.images.length > 1 && (
-                <button
-                  type="button"
-                  onClick={nextImage}
-                  className="absolute right-3 flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-black/60 text-xl text-white backdrop-blur-md transition hover:bg-black/80 md:right-5"
-                  aria-label="Next image"
-                >
-                  →
-                </button>
-              )}
-            </div>
-
-            {/* THUMBNAILS */}
-            {lightbox.images.length > 1 && (
-              <div className="mt-4 flex gap-3 overflow-x-auto pb-1">
-                {lightbox.images.map((image, index) => (
-                  <button
-                    key={image.src}
-                    type="button"
-                    onClick={() =>
-                      setLightbox({
-                        ...lightbox,
-                        index,
-                      })
-                    }
-                    className={`min-w-[120px] overflow-hidden rounded-xl border transition ${
-                      index === lightbox.index
-                        ? "border-emerald-400"
-                        : "border-neutral-800 hover:border-neutral-600"
-                    }`}
-                  >
-                    <Image
-                      src={image.src}
-                      alt={image.label}
-                      width={250}
-                      height={150}
-                      className="aspect-[16/9] w-full object-cover object-top"
-                    />
-
-                    <div className="bg-neutral-950 px-3 py-2 text-left text-[10px] text-neutral-500">
-                      {image.label}
-                    </div>
-                  </button>
-                ))}
-              </div>
-            )}
-
-            <div className="mt-4 text-center text-xs text-neutral-600">
-              Click outside or press Esc to close · Arrow keys to browse
+              <button
+                type="button"
+                onClick={nextImage}
+                className="absolute right-4 h-11 w-11 rounded-full bg-black/60"
+              >
+                →
+              </button>
             </div>
           </div>
         </div>
