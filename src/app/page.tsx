@@ -8,8 +8,13 @@ const projects = [
     status: "Active",
     progress: 78,
     description:
-      "I built this as a proper learning platform rather than just a course website. Students can learn at their own pace, while the system handles courses, enrolments, assessments, certificates and payments behind the scenes.",
+      "I built this as a proper learning platform rather than just a course website. Students can browse and join courses, while the admin side handles users, roles, enrolments, certificates and payments behind the scenes.",
     stack: ["Next.js", "TypeScript", "Supabase", "ToyyibPay"],
+    images: [
+      "/images/projects/mpa/mpa-homepage.png",
+      "/images/projects/mpa/mpa-courses.png",
+      "/images/projects/mpa/mpa-admin.png",
+    ],
   },
   {
     number: "02",
@@ -20,6 +25,11 @@ const projects = [
     description:
       "This started from my love for giving personal letters. I wanted to turn that feeling into something digital, where people can create private letters with their own themes, photos, memories and little details that make the message feel personal.",
     stack: ["Next.js", "TypeScript", "Supabase", "Vercel"],
+    images: [
+      "/images/projects/just-for-you/just-for-you-home.png",
+      "/images/projects/just-for-you/just-for-you-envelope.png",
+      "/images/projects/just-for-you/just-for-you-flowers.png",
+    ],
   },
   {
     number: "03",
@@ -30,6 +40,7 @@ const projects = [
     description:
       "I designed RideBuddy around a simple thought: riders spend a lot of time on the road earning a living or just getting from place to place, and someone may be waiting for them to come home safely. The idea focuses on safety, ride tracking, maintenance and everyday support for riders.",
     stack: ["Flutter", "FlutterFlow", "Supabase", "Mobile UX"],
+    images: [],
   },
   {
     number: "04",
@@ -40,6 +51,7 @@ const projects = [
     description:
       "A psychological mystery game I am building in Godot. Instead of relying only on jumpscares, I want the tension to come from investigation, strange recordings, difficult choices and the feeling that something in the story is not quite right.",
     stack: ["Godot", "GDScript", "3D", "Game Systems"],
+    images: [],
   },
 ];
 
@@ -195,9 +207,45 @@ export default function Home() {
           {projects.map((project) => (
             <article
               key={project.title}
-              className="group flex flex-col rounded-[2rem] border border-neutral-800 bg-neutral-950 p-6 transition hover:border-neutral-600"
+              className="group flex flex-col rounded-[2rem] border border-neutral-800 bg-neutral-950 p-6 transition duration-300 hover:border-neutral-600"
             >
-              {/* TOP */}
+              {/* PROJECT SCREENSHOTS */}
+              {project.images.length > 0 && (
+                <div className="mb-8">
+                  {/* MAIN IMAGE */}
+                  <div className="overflow-hidden rounded-[1.5rem] border border-neutral-800 bg-neutral-900">
+                    <Image
+                      src={project.images[0]}
+                      alt={`${project.title} main preview`}
+                      width={1400}
+                      height={850}
+                      className="aspect-[16/9] w-full object-cover object-top transition duration-500 group-hover:scale-[1.01]"
+                    />
+                  </div>
+
+                  {/* SECONDARY IMAGES */}
+                  {project.images.length > 1 && (
+                    <div className="mt-3 grid grid-cols-2 gap-3">
+                      {project.images.slice(1, 3).map((image, index) => (
+                        <div
+                          key={image}
+                          className="overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900"
+                        >
+                          <Image
+                            src={image}
+                            alt={`${project.title} preview ${index + 2}`}
+                            width={800}
+                            height={500}
+                            className="aspect-[16/10] w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* PROJECT HEADER */}
               <div className="flex items-start justify-between gap-6">
                 <div>
                   <p className="mb-3 text-xs uppercase tracking-[0.22em] text-neutral-500">
@@ -214,13 +262,13 @@ export default function Home() {
                 </span>
               </div>
 
-              {/* DESCRIPTION + METER */}
-              <div className="mt-8 grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
+              {/* DESCRIPTION + PROGRESS METER */}
+              <div className="mt-8 grid flex-1 gap-8 md:grid-cols-[1fr_auto] md:items-center">
                 <p className="leading-7 text-neutral-400">
                   {project.description}
                 </p>
 
-                {/* CIRCULAR METER */}
+                {/* CIRCULAR PROGRESS */}
                 <div
                   className="relative flex h-28 w-28 shrink-0 items-center justify-center rounded-full"
                   style={{
@@ -270,7 +318,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* FOOTER */}
+              {/* CARD FOOTER */}
               <div className="mt-8 flex items-center justify-between border-t border-neutral-900 pt-5 text-sm">
                 <span className="text-neutral-600">Built by Intan · 2026</span>
 
@@ -315,7 +363,7 @@ export default function Home() {
                 </span>
               </div>
 
-              {/* COMING SOON */}
+              {/* UPCOMING IDEAS */}
               <div>
                 <p className="mb-4 text-sm font-medium text-neutral-300">
                   What&apos;s coming
