@@ -856,6 +856,164 @@ export default function Home() {
             </article>
           </div>
         </section>
+        {/* NOW */}
+        <section
+          id="now"
+          className="mx-auto max-w-7xl border-t border-neutral-900 px-6 py-24 md:px-10 md:py-32"
+        >
+          <div className="mb-14 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+            <div>
+              <p className="mb-3 text-sm uppercase tracking-[0.24em] text-neutral-500">
+                /Now
+              </p>
+
+              <h2 className="max-w-3xl text-4xl font-semibold tracking-[-0.04em] md:text-6xl">
+                What I&apos;m working on lately.
+              </h2>
+            </div>
+
+            <div className="text-sm leading-6 text-neutral-500 md:text-right">
+              <p>September 2026</p>
+              <p>Miri, Sarawak</p>
+            </div>
+          </div>
+
+          {/* ACTIVE NOW */}
+          <div className="rounded-[2rem] border border-neutral-800 bg-neutral-950 p-7 md:p-10">
+            <div className="flex flex-col justify-between gap-8 md:flex-row md:items-start">
+              <div className="max-w-3xl">
+                <div className="flex items-center gap-3">
+                  <span className="h-2 w-2 rounded-full bg-emerald-400" />
+
+                  <p className="text-xs uppercase tracking-[0.22em] text-emerald-400">
+                    Active Now
+                  </p>
+                </div>
+
+                <p className="mt-8 text-xs uppercase tracking-[0.22em] text-neutral-600">
+                  01 · Building
+                </p>
+
+                <h3 className="mt-3 text-3xl font-semibold tracking-[-0.03em] md:text-4xl">
+                  MPA Learning Portal
+                </h3>
+
+                <p className="mt-6 max-w-2xl text-base leading-8 text-neutral-400 md:text-lg">
+                  Currently my main development priority. I&apos;m working on
+                  turning it into a complete learning platform, from course
+                  delivery and student enrolment to payments, certificates and
+                  the systems behind them.
+                </p>
+              </div>
+
+              <div className="shrink-0 rounded-3xl border border-neutral-800 bg-[#0c0c0c] px-6 py-5 md:min-w-[260px]">
+                <p className="text-xs uppercase tracking-[0.2em] text-neutral-600">
+                  Current focus
+                </p>
+
+                <div className="mt-5 space-y-3 text-sm text-neutral-300">
+                  <div className="flex items-center gap-3">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                    Payment flow
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                    Platform polish
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                    Course launch
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-10 border-t border-neutral-900 pt-5 text-xs uppercase tracking-[0.18em] text-neutral-600">
+              Main priority · Full-stack platform
+            </div>
+          </div>
+
+          {/* SECONDARY NOW CARDS */}
+          <div className="mt-6 grid gap-6 lg:grid-cols-2">
+            <div className="rounded-[2rem] border border-neutral-800 bg-neutral-950 p-7 md:p-9">
+              <p className="text-xs uppercase tracking-[0.22em] text-neutral-600">
+                02 · Exploring
+              </p>
+
+              <h3 className="mt-4 text-2xl font-semibold tracking-[-0.03em]">
+                Software × Mechatronics
+              </h3>
+
+              <p className="mt-5 leading-7 text-neutral-400">
+                I&apos;m continuing to grow on the software side while looking
+                for ways to bring it back into what I studied: automation, IoT
+                and physical systems.
+              </p>
+
+              <div className="mt-8 rounded-2xl border border-neutral-900 bg-[#0c0c0c] p-5">
+                <p className="text-xs uppercase tracking-[0.2em] text-neutral-600">
+                  Next
+                </p>
+
+                <p className="mt-3 text-sm text-neutral-300">
+                  ESP32 · Sensors · IoT experiments
+                </p>
+              </div>
+            </div>
+
+            <div className="rounded-[2rem] border border-neutral-800 bg-neutral-950 p-7 md:p-9">
+              <p className="text-xs uppercase tracking-[0.22em] text-neutral-600">
+                03 · On The Side
+              </p>
+
+              <h3 className="mt-4 text-2xl font-semibold tracking-[-0.03em]">
+                A few ideas I&apos;m not ready to abandon.
+              </h3>
+
+              <p className="mt-5 leading-7 text-neutral-400">
+                RideBuddy, Just For You and The Sixth Recording are still
+                sitting somewhere between prototype, experiment and &quot;I
+                really want to finish this.&quot;
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-2">
+                <span className="rounded-full border border-neutral-800 px-3 py-1 text-xs text-neutral-500">
+                  RideBuddy
+                </span>
+
+                <span className="rounded-full border border-neutral-800 px-3 py-1 text-xs text-neutral-500">
+                  Just For You
+                </span>
+
+                <span className="rounded-full border border-neutral-800 px-3 py-1 text-xs text-neutral-500">
+                  The Sixth Recording
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* NOW ENDING */}
+          <div className="mt-16 border-y border-neutral-900 py-12">
+            <div className="grid gap-8 lg:grid-cols-[0.55fr_1.45fr] lg:items-start">
+              <p className="text-xs uppercase tracking-[0.22em] text-neutral-600">
+                A note to myself
+              </p>
+
+              <div>
+                <p className="max-w-3xl text-2xl font-medium leading-9 tracking-[-0.025em] text-white md:text-3xl md:leading-10">
+                  I usually have more ideas than time. For now, I&apos;m
+                  learning to build them one at a time.
+                </p>
+
+                <p className="mt-6 text-sm text-neutral-600">
+                  Last updated · September 2026
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* IMAGE LIGHTBOX */}
