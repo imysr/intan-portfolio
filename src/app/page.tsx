@@ -302,6 +302,243 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ABOUT */}
+        <section
+          id="about"
+          className="mx-auto max-w-7xl border-t border-neutral-900 px-6 py-24 md:px-10 md:py-32"
+        >
+          {/* ABOUT INTRO */}
+          <div className="grid gap-12 lg:grid-cols-[0.55fr_1.45fr] lg:gap-20">
+            <div>
+              <p className="text-sm uppercase tracking-[0.24em] text-neutral-500">
+                About
+              </p>
+
+              <div className="mt-6 hidden items-center gap-3 text-xs uppercase tracking-[0.18em] text-neutral-700 lg:flex">
+                <span className="h-px w-12 bg-neutral-800" />A little about how
+                I think
+              </div>
+            </div>
+
+            <div>
+              <h2 className="max-w-4xl text-4xl font-semibold leading-[1.02] tracking-[-0.045em] sm:text-5xl md:text-6xl">
+                I build things with
+                <br />a reason behind them.
+              </h2>
+
+              <div className="mt-10 grid gap-8 text-base leading-8 text-neutral-400 md:grid-cols-2 md:text-[17px]">
+                <div className="space-y-6">
+                  <p>
+                    I graduated in{" "}
+                    <span className="text-neutral-100">
+                      Mechatronics Engineering
+                    </span>
+                    , where I learned how machines, electronics, automation and
+                    programming come together to make something work.
+                  </p>
+
+                  <p>
+                    But somewhere along the way, I realised I didn&apos;t want
+                    to limit myself to only one side of technology.
+                  </p>
+
+                  <p>
+                    I started exploring further into software development,
+                    building web platforms, experimenting with mobile products,
+                    working with databases, and finding new ways to connect that
+                    software knowledge back to IoT and automation.
+                  </p>
+
+                  <p>
+                    Some things were already familiar. Others started with me
+                    having an idea and figuring things out while I was building
+                    it.
+                  </p>
+
+                  <p className="text-neutral-200">
+                    And I think that&apos;s how I learn best.
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  <p>
+                    Regardless of what I&apos;m building, there&apos;s usually
+                    one question somewhere in my head:
+                  </p>
+
+                  <p className="border-l border-emerald-400 pl-5 text-xl font-medium leading-8 text-white">
+                    Does this actually mean something to the person using it?
+                  </p>
+
+                  <p>
+                    I like building things that are useful, but I also like when
+                    there&apos;s a little bit of heart behind them.
+                  </p>
+
+                  <p>
+                    Sometimes what I build starts from a practical problem.
+                    Sometimes it comes from something sentimental. And sometimes
+                    I&apos;m simply curious enough about an idea that I want to
+                    see whether I can make it real.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* HUMAN REASON */}
+          <div className="mt-20 grid gap-4 md:grid-cols-2">
+            <div className="rounded-[2rem] border border-neutral-800 bg-neutral-950 p-7 md:p-9">
+              <div className="flex items-center justify-between">
+                <p className="text-xs uppercase tracking-[0.22em] text-neutral-500">
+                  01 · Useful
+                </p>
+
+                <span className="text-lg text-neutral-700">↘</span>
+              </div>
+
+              <h3 className="mt-8 text-2xl font-semibold tracking-[-0.03em]">
+                Think beyond the feature.
+              </h3>
+
+              <p className="mt-5 leading-7 text-neutral-400">
+                When I thought about building something for riders, I
+                wasn&apos;t only thinking about navigation, motorcycle
+                maintenance or features on a screen. I thought about the person
+                riding the motorcycle too.
+              </p>
+
+              <p className="mt-4 leading-7 text-neutral-400">
+                They might spend hours on the road, and at the end of the day,
+                there may be someone at home waiting for them to return safely.
+              </p>
+
+              <div className="mt-8 border-t border-neutral-900 pt-5 text-xs uppercase tracking-[0.18em] text-neutral-600">
+                RideBuddy · The person behind the journey
+              </div>
+            </div>
+
+            <div className="rounded-[2rem] border border-neutral-800 bg-neutral-950 p-7 md:p-9">
+              <div className="flex items-center justify-between">
+                <p className="text-xs uppercase tracking-[0.22em] text-neutral-500">
+                  02 · Sentimental
+                </p>
+
+                <span className="text-lg text-neutral-700">↘</span>
+              </div>
+
+              <h3 className="mt-8 text-2xl font-semibold tracking-[-0.03em]">
+                Make it feel like someone cared.
+              </h3>
+
+              <p className="mt-5 leading-7 text-neutral-400">
+                When I started building a digital letter platform, I didn&apos;t
+                want it to feel like another place where you type something into
+                a box and press send.
+              </p>
+
+              <p className="mt-4 leading-7 text-neutral-400">
+                I wanted receiving one to feel personal, like someone had
+                actually taken their time to make something specifically for
+                you.
+              </p>
+
+              <div className="mt-8 border-t border-neutral-900 pt-5 text-xs uppercase tracking-[0.18em] text-neutral-600">
+                Just For You · The feeling behind the product
+              </div>
+            </div>
+          </div>
+
+          {/* ABOUT CONCLUSION */}
+          <div className="mt-20 grid gap-10 border-y border-neutral-900 py-14 lg:grid-cols-[0.65fr_1.35fr] lg:items-start">
+            <p className="text-sm uppercase tracking-[0.24em] text-neutral-600">
+              Where that leaves me
+            </p>
+
+            <div>
+              <p className="max-w-3xl text-lg leading-8 text-neutral-400">
+                Maybe that&apos;s why the things I build don&apos;t fit
+                perfectly into one category. I&apos;m still an engineer. I still
+                enjoy automation, electronics, sensors and figuring out how
+                physical systems work. But I also enjoy building the software
+                around those ideas, designing experiences people interact with,
+                and learning technologies I haven&apos;t worked with before.
+              </p>
+
+              <p className="mt-8 max-w-4xl text-2xl font-medium leading-9 tracking-[-0.025em] text-white md:text-3xl md:leading-10">
+                I build software. I build engineering projects. I experiment.
+                But whatever I&apos;m making, I want there to be a reason for it
+                to exist.
+              </p>
+            </div>
+          </div>
+
+          {/* ABOUT CARDS */}
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <div className="group rounded-[1.75rem] border border-neutral-800 bg-neutral-950 p-6 transition hover:border-neutral-600">
+              <div className="flex items-center justify-between">
+                <span className="text-xs uppercase tracking-[0.22em] text-neutral-600">
+                  01
+                </span>
+
+                <span className="h-2 w-2 rounded-full bg-emerald-400" />
+              </div>
+
+              <p className="mt-10 text-sm text-neutral-500">Where I started</p>
+
+              <h3 className="mt-2 text-xl font-semibold">
+                Mechatronics Engineering
+              </h3>
+
+              <p className="mt-4 text-sm leading-6 text-neutral-500">
+                Automation · Electronics · Programming
+              </p>
+            </div>
+
+            <div className="group rounded-[1.75rem] border border-neutral-800 bg-neutral-950 p-6 transition hover:border-neutral-600">
+              <div className="flex items-center justify-between">
+                <span className="text-xs uppercase tracking-[0.22em] text-neutral-600">
+                  02
+                </span>
+
+                <span className="h-2 w-2 rounded-full bg-emerald-400" />
+              </div>
+
+              <p className="mt-10 text-sm text-neutral-500">
+                Where I&apos;m exploring
+              </p>
+
+              <h3 className="mt-2 text-xl font-semibold">
+                Software &amp; Product Development
+              </h3>
+
+              <p className="mt-4 text-sm leading-6 text-neutral-500">
+                Web · Mobile · IoT · Interactive Experiences
+              </p>
+            </div>
+
+            <div className="group rounded-[1.75rem] border border-neutral-800 bg-neutral-950 p-6 transition hover:border-neutral-600">
+              <div className="flex items-center justify-between">
+                <span className="text-xs uppercase tracking-[0.22em] text-neutral-600">
+                  03
+                </span>
+
+                <span className="h-2 w-2 rounded-full bg-emerald-400" />
+              </div>
+
+              <p className="mt-10 text-sm text-neutral-500">How I work</p>
+
+              <h3 className="mt-2 text-xl font-semibold">
+                Build → Break → Learn → Build Again
+              </h3>
+
+              <p className="mt-4 text-sm leading-6 text-neutral-500">
+                I learn best when I have something real to make.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* PROJECTS */}
         <section
           id="projects"
