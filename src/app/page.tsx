@@ -56,10 +56,14 @@ const projects = [
     status: "In Development",
     progress: 41,
     description:
-      "A psychological mystery game I am building in Godot. Instead of relying only on jumpscares, I want the tension to come from investigation, strange recordings, difficult choices and the feeling that something in the story is not quite right.",
+      "The Sixth Recording is my first psychological mystery game, and it is still very much a work in progress. I am building it in Godot while learning more about 3D game development along the way. The story revolves around recordings, investigation and choices that slowly change what the player thinks is happening.",
     stack: ["Godot", "GDScript", "3D", "Game Systems"],
-    imageStyle: "desktop",
-    images: [],
+    imageStyle: "game",
+    images: [
+      "/images/projects/sixth-recording/sixth-recording-choice.png",
+      "/images/projects/sixth-recording/sixth-recording-dispatch.png",
+      "/images/projects/sixth-recording/sixth-recording-interaction.png",
+    ],
   },
 ];
 
@@ -208,14 +212,13 @@ export default function Home() {
           </p>
         </div>
 
-        {/* PROJECT CARDS */}
         <div className="grid gap-6 lg:grid-cols-2">
           {projects.map((project) => (
             <article
               key={project.title}
               className="group flex flex-col rounded-[2rem] border border-neutral-800 bg-neutral-950 p-6 transition duration-300 hover:border-neutral-600"
             >
-              {/* MOBILE PROJECT SCREENSHOTS */}
+              {/* MOBILE SHOWCASE */}
               {project.images.length > 0 && project.imageStyle === "mobile" && (
                 <div className="mb-8 overflow-hidden rounded-[1.5rem] border border-neutral-800 bg-[#0c1018] p-4 sm:p-6">
                   <div className="grid grid-cols-3 items-start gap-3 sm:gap-5">
@@ -244,7 +247,7 @@ export default function Home() {
                 </div>
               )}
 
-              {/* DESKTOP PROJECT SCREENSHOTS */}
+              {/* DESKTOP SHOWCASE */}
               {project.images.length > 0 &&
                 project.imageStyle === "desktop" && (
                   <div className="mb-8">
@@ -279,6 +282,47 @@ export default function Home() {
                   </div>
                 )}
 
+              {/* GAME SHOWCASE */}
+              {project.images.length > 0 && project.imageStyle === "game" && (
+                <div className="mb-8 overflow-hidden rounded-[1.5rem] border border-neutral-800 bg-[#080a0d] p-3">
+                  <div className="relative overflow-hidden rounded-[1.1rem] border border-neutral-800">
+                    <Image
+                      src={project.images[0]}
+                      alt={`${project.title} player choice prototype`}
+                      width={1400}
+                      height={850}
+                      className="aspect-[16/9] w-full object-cover object-top transition duration-500 group-hover:scale-[1.01]"
+                    />
+
+                    <div className="absolute left-3 top-3 rounded-full border border-white/10 bg-black/70 px-3 py-1 text-[9px] uppercase tracking-[0.18em] text-neutral-300 backdrop-blur-sm">
+                      Prototype Build · Godot
+                    </div>
+                  </div>
+
+                  <div className="mt-3 grid grid-cols-2 gap-3">
+                    {project.images.slice(1, 3).map((image, index) => (
+                      <div
+                        key={image}
+                        className="overflow-hidden rounded-xl border border-neutral-800"
+                      >
+                        <Image
+                          src={image}
+                          alt={`${project.title} prototype screen ${index + 2}`}
+                          width={800}
+                          height={500}
+                          className="aspect-[16/10] w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]"
+                        />
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-4 flex items-center justify-between px-1 text-[10px] uppercase tracking-[0.18em] text-neutral-600">
+                    <span>Development Footage</span>
+                    <span>Playable Prototype</span>
+                  </div>
+                </div>
+              )}
+
               {/* PROJECT HEADER */}
               <div className="flex items-start justify-between gap-6">
                 <div>
@@ -296,7 +340,7 @@ export default function Home() {
                 </span>
               </div>
 
-              {/* DESCRIPTION + PROGRESS */}
+              {/* DESCRIPTION + METER */}
               <div className="mt-8 grid flex-1 gap-8 md:grid-cols-[1fr_auto] md:items-center">
                 <p className="leading-7 text-neutral-400">
                   {project.description}
@@ -323,7 +367,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* TECH STACK */}
+              {/* STACK */}
               <div className="mt-8 flex flex-wrap gap-2">
                 {project.stack.map((item) => (
                   <span
