@@ -9,10 +9,10 @@ const projects = [
     number: "01",
     category: "Full-Stack Platform",
     title: "MPA Learning Portal",
-    status: "Active",
-    progress: 78,
+    status: "Production · V1.1",
+    progress: 95,
     description:
-      "I built this as a proper learning platform rather than just a course website. Students can browse and join courses, while the admin side handles users, roles, enrolments, certificates and payments behind the scenes.",
+      "A production-ready learning platform I built for Millennial Professional Academy. It brings course delivery, student and lecturer workflows, assessments, progress tracking, certificates, enrolments and ToyyibPay payments into one system, with a dedicated admin portal behind the scenes.",
     stack: ["Next.js", "TypeScript", "Supabase", "ToyyibPay"],
     imageStyle: "desktop",
     images: [
@@ -242,7 +242,7 @@ export default function Home() {
 
             <div className="mt-16 flex items-center gap-3 text-sm text-neutral-500">
               <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              <span>Currently building MPA Learning Portal</span>
+              <span>MPA Learning Portal · V1.1 released</span>
             </div>
           </div>
 
@@ -650,10 +650,11 @@ export default function Home() {
             <h3 className="mt-8 text-3xl font-semibold">MPA Learning Portal</h3>
 
             <p className="mt-5 max-w-3xl leading-8 text-neutral-400">
-              Currently my main development priority. I&apos;m working on
-              turning it into a complete learning platform, from course delivery
-              and student enrolment to payments, certificates and the systems
-              behind them.
+              MPA Learning Portal has reached its V1.1 production release. The
+              core platform is now live with course delivery, student and
+              lecturer workflows, assessments, progress tracking, certificates,
+              enrolments and ToyyibPay payments. Future versions will focus on
+              communication, analytics and business automation.
             </p>
           </div>
 
